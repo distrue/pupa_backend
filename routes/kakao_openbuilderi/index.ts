@@ -1,7 +1,7 @@
 import Express  from 'express';
 const Router = Express.Router();
 
-import mypage from './myPage';
+import mypage from './mypage';
 Router.use(mypage);
 
 // legacy snuff service
