@@ -1,19 +1,86 @@
-export function basicCard(msg: string, imageUrl: string) {
-  return({
+export function responseWrapper(items: Object[]) {
+  return ({
     "version": "2.0",
     "template": {
-      "outputs": [
-        {
-            "basicCard": {
-                "title": msg,
-                "buttons": [],
-                "thumbnail": {
-                    "imageUrl": imageUrl
-                }
-            }
-        }]
+      "outputs": items
     }
-});
+  });
+}
+
+export function listItem(title: string, description: string, imageUrl: string, webLink?: string) {
+  return ({
+    "title": title,
+    "description": description,
+    "imageUrl": imageUrl,
+    "link": {
+      "web": webLink || undefined
+    }
+  });
+}
+
+interface blockParams {
+  label: string,
+  messageText: string,
+  blockId: string,
+  extra?: Object
+}
+
+interface msgParams {
+  label: string,
+  messageText: string
+}
+
+export function buttonItem(type: string, actionParams: blockParams | Object) {
+  if(type === 'block') {
+    const params = actionParams as blockParams;
+    return({
+      "action": "block",
+      "label": params.label,
+      "messageText": params.messageText,
+      "blockId": params.blockId,
+      "extra": params.extra || undefined // {restaurant_name: searchTitle(data.name)}
+    });
+  }
+  
+  if(type === 'message') {
+    const params = actionParams as msgParams;
+    return {
+        "action": "message",
+        "label": params.label,
+        "messageText": params.messageText
+    };
+  }
+
+  return({
+    "action": "share",
+    "label": "공유하기"
+  });
+}
+
+export function listCard(title: string, titleThumbnail: string, items:any[] = [], buttons:any[] = []) {
+  return({
+    "listCard":{
+      "header": {
+        "title": title,
+        "imageUrl": titleThumbnail
+      },
+      "items": items,
+      "buttons": buttons
+    } 
+  });
+}
+
+export function basicCard(msg: string, description: string, imageUrl: string, buttons:any[] = []) {
+  return({
+    "basicCard": {
+      "title": msg,
+      "description": description,
+      "buttons": buttons,
+      "thumbnail": {
+        "imageUrl": imageUrl
+      }
+    }
+  });
 }
 
 export function fallbackBlock(msg:string, type?: string) {
