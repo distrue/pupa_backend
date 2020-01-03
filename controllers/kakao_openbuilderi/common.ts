@@ -1,3 +1,21 @@
+export function basicCard(msg: string, imageUrl: string) {
+  return({
+    "version": "2.0",
+    "template": {
+      "outputs": [
+        {
+            "basicCard": {
+                "title": msg,
+                "buttons": [],
+                "thumbnail": {
+                    "imageUrl": imageUrl
+                }
+            }
+        }]
+    }
+});
+}
+
 export function fallbackBlock(msg:string, type?: string) {
     let buttons:any = [];
     let imageUrl = "https://snuffstatic.s3.ap-northeast-2.amazonaws.com/%E1%84%89%E1%85%B3%E1%84%82%E1%85%AE%E1%84%91%E1%85%AE%E1%84%91%E1%85%A1+%E1%84%85%E1%85%A9%E1%84%80%E1%85%A9.PNG";
