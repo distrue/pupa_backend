@@ -9,6 +9,7 @@ import {init as configInit} from './config';
 import dbinit from './tools/mongodb';
 
 import apiRouter from './routes/kakao_openbuilderi';
+import adminRouter from './routes/admin';
 
 const app = Instance();
 
@@ -32,6 +33,7 @@ app.use(cookieParser());
 configInit();
 
 app.use('/api', apiRouter);
+app.use('/admin', adminRouter);
 
 app.get('/', function(req: Express.Request, res: Express.Response){
 	res.render('index');

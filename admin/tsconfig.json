@@ -1,0 +1,36 @@
+{
+    "compilerOptions": {
+      /* Basic Options */
+      "target": "esnext", 
+      "allowJs": true,
+      "module": "commonjs", /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'. */
+      "lib": [
+        "dom",
+        "esnext"
+      ], /* Specify library files to be included in the compilation. */
+      "jsx": "preserve", /* Specify JSX code generation: 'preserve', 'react-native', or 'react'. */
+      "noEmit": true, /* Do not emit outputs. */
+      "strict": true, /* Enable all strict type-checking options. */
+      "noImplicitAny": true, /* Raise error on expressions and declarations with an implied 'any' type. */
+      "strictNullChecks": true, /* Enable strict null checks. */
+      "strictFunctionTypes": true, /* Enable strict checking of function types. */
+      "strictBindCallApply": true, /* Enable strict 'bind', 'call', and 'apply' methods on functions. */
+      "strictPropertyInitialization": true, /* Enable strict checking of property initialization in classes. */
+      "noImplicitThis": true, /* Raise error on 'this' expressions with an implied 'any' type. */
+      "alwaysStrict": true, /* Parse in strict mode and emit "use strict" for each source file. */
+      /* Additional Checks */
+      "noUnusedLocals": true, /* Report errors on unused locals. */
+      "noUnusedParameters": true, /* Report errors on unused parameters. */
+      "noImplicitReturns": true, /* Report error when not all code paths in function return a value. */
+      "typeRoots": [
+        "./@types"
+      ],   /* List of folders to include type definitions from. */
+      "esModuleInterop": true,
+      "jsx": "react"
+    },
+    "exclude": [
+      "node_modules",
+      "public",
+      ".cache"
+    ]
+}
