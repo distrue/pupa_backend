@@ -24,8 +24,7 @@ const schema = new mongoose.Schema({
     requests: {
         default: [],
         type: [{
-            imageUrl: String,
-            type: String
+            type: Object
         }]
     }
 })
