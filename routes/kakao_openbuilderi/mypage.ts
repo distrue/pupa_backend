@@ -45,7 +45,7 @@ Router.post('/mypage', async (req:Express.Request, res:Express.Response) => {
     try {
         const user = await findUser(req.body.userRequest.user.properties.botUserKey);
         if(!user) {
-            addUser(req.body.userRequest.user.properties.botUserKey);
+            await addUser(req.body.userRequest.user.properties.botUserKey);
         }
         const listItems = [
             listItem("방문기록", "", "https://snuffstatic.s3.ap-northeast-2.amazonaws.com/%E1%84%8C%E1%85%B5%E1%84%83%E1%85%A9.png"),
