@@ -25,10 +25,12 @@ const schema = new mongoose.Schema({
             type: ObjectId
         }]
     },
-    requests: [{
-        imageUrl: String,
-        type: String
-    }]
+    requests: {
+        default: [],
+        type: [{
+            type: Object
+        }]
+    }
 })
 
 export const UserModel = mongoose.model<User>('User', schema);
