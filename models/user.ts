@@ -2,10 +2,6 @@ import mongoose from 'mongoose';
 import { Membership } from './membership';
 import { ObjectId } from 'bson';
 
-class Request {
-    imageUrl: String = '';
-    type: String = '';
-}
 
 export interface User extends mongoose.Document {
     plusfriendUserKey: String,
@@ -27,7 +23,7 @@ const schema = new mongoose.Schema({
     },
     requests: {
         default: [],
-        type: Request
+        type: Object
     }
 })
 
