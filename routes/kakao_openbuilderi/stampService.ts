@@ -2,7 +2,7 @@ import Express from 'express';
 const Router = Express.Router();
 
 import {getAttendance, getEventRule} from '../../service/eventRule';
-import {fallbackBlock} from '../../controllers/kakao_openbuilderi/common';
+import {fallbackBlock} from '../../controllers/common';
 import { myScoreBlock, eventRuleBlock } from '../../controllers/kakao_openbuilderi/stamp';
 
 

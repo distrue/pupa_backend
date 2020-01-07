@@ -3,7 +3,7 @@ const Router = Express.Router();
 
 import {targets, list} from '../../service/event';
 import { resolve } from 'path';
-import { fallbackBlock, basicCardCarousel } from '../../controllers/kakao_openbuilderi/common';
+import { fallbackBlock, basicCardCarousel } from '../../controllers/common';
 import { inruleCell, noruleCell, targetCell, targetMapCell } from '../../controllers/kakao_openbuilderi/event';
 
 Router.post('/askEvent', async (req:Express.Request, res:Express.Response) => {

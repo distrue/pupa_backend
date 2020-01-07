@@ -83,6 +83,17 @@ export function basicCard(msg: string, description: string, imageUrl: string, bu
   });
 }
 
+type carouselType = 'basicCard';
+
+export function carousel(type: carouselType, list: any[]) {
+  return({
+    "carousel": {
+      "type": type,
+      "items": list
+    }
+  });
+}
+
 export function fallbackBlock(msg:string, type?: string) {
     let buttons:any = [];
     let imageUrl = "https://snuffstatic.s3.ap-northeast-2.amazonaws.com/%E1%84%89%E1%85%B3%E1%84%82%E1%85%AE%E1%84%91%E1%85%AE%E1%84%91%E1%85%A1+%E1%84%85%E1%85%A9%E1%84%80%E1%85%A9.PNG";
