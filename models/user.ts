@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 import { Membership } from './membership';
 import { ObjectId } from 'bson';
 
-interface Request {
+interface Req {
     imageUrl: String,
     type: String
 }
@@ -10,7 +10,7 @@ interface Request {
 export interface User extends mongoose.Document {
     plusfriendUserKey: String,
     memberships: Membership[],
-    requests: Request[]
+    requests: Req[]
 }
 
 const schema = new mongoose.Schema({
