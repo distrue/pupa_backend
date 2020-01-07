@@ -23,7 +23,10 @@ const schema = new mongoose.Schema({
     },
     requests: {
         default: [],
-        type: Object
+        type: [{
+            imageUrl: String,
+            type: String
+        }]
     }
 })
 
