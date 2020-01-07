@@ -6,7 +6,8 @@ export async function findUser(plusfriendUserKey: string) {
 }
 
 export async function addUser(plusfriendUserKey: string) {
-    return await UserModel.create({"plusfriendUserKey": plusfriendUserKey});
+    console.log( await UserModel.create({"plusfriendUserKey": plusfriendUserKey}) );
+    return true;
 }
 
 export async function askRegister(plusfriendUserKey: string, imageUrl: string, reqType: string = 'shy') {
