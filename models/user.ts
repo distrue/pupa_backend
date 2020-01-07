@@ -2,9 +2,9 @@ import mongoose from 'mongoose';
 import { Membership } from './membership';
 import { ObjectId } from 'bson';
 
-export interface Request {
-    imageUrl: String,
-    type: String
+class Request {
+    imageUrl: String = '';
+    type: String = '';
 }
 
 export interface User extends mongoose.Document {
