@@ -1,33 +1,35 @@
 import mongoose from 'mongoose';
+import { Membership } from './membership';
+import { ObjectId } from 'bson';
+
+interface Req {
+    imageUrl: String,
+    type: String
+}
 
 export interface User extends mongoose.Document {
-    kakaoAccount: {},
-    nickname: "",
-    tmpcode: "",
-    access_token: "",
-    refresh_token: ""
+    plusfriendUserKey: String,
+    memberships: Membership[],
+    requests: Req[]
 }
 
 const schema = new mongoose.Schema({
-    kakaoAccount: {
-        default: {},
-        type: Object
-    },
-    nickname: {
-        default: "",
+    plusfriendUserKey: {
+        required: true,
         type: String
     },
-    tmpcode: {
-        default: "",
-        type: String
+    memberships: {
+        default: [],
+        type: [{
+            ref: 'Membership',
+            type: ObjectId
+        }]
     },
-    access_token: {
-        default: "",
-        type: String
-    },
-    refresh_token: {
-        default: "",
-        type: String
+    requests: {
+        default: [],
+        type: [{
+            type: Object
+        }]
     }
 })
 

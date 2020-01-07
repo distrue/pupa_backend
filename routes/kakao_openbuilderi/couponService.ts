@@ -1,7 +1,7 @@
 import Express from 'express';
 const Router = Express.Router();
 import {owncouponList} from '../../service/coupon';
-import {fallbackBlock, basicCardCarousel} from '../../controllers/kakao_openbuilderi/common';
+import {fallbackBlock, basicCardCarousel} from '../../controllers/common';
 import { couponBlock } from '../../controllers/kakao_openbuilderi/coupon';
 
 

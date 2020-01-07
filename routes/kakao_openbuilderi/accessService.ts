@@ -6,7 +6,7 @@ import {read} from '../../service/qrcode';
 import {attendanceUpdate} from '../../service/eventRule';
 import {owncouponAdd} from '../../service/coupon';
 import {OneTimeCodeModel, Coupon} from '../../models/coupon';
-import {fallbackBlock} from '../../controllers/kakao_openbuilderi/common';
+import {fallbackBlock} from '../../controllers/common';
 import { QREvent, QREventRule } from '../../controllers/kakao_openbuilderi/access';
 
 

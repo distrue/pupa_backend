@@ -1,8 +1,10 @@
 import Express  from 'express';
 const Router = Express.Router();
 
-// legacy snuff service
+import mypage from './mypage';
+Router.use(mypage);
 
+// legacy snuff service
 import eventService from './eventService';
 Router.use(eventService);
 
