@@ -2,6 +2,10 @@ import mongoose from 'mongoose';
 import { Membership } from './membership';
 import { ObjectId } from 'bson';
 
+interface Request {
+    imageUrl: String,
+    type: String
+}
 
 export interface User extends mongoose.Document {
     plusfriendUserKey: String,
@@ -21,12 +25,10 @@ const schema = new mongoose.Schema({
             type: ObjectId
         }]
     },
-    requests: {
-        default: [],
-        type: [{
-            type: Object
-        }]
-    }
+    requests: [{
+        imageUrl: String,
+        type: String
+    }]
 })
 
 export const UserModel = mongoose.model<User>('User', schema);
