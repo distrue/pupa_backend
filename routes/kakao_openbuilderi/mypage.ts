@@ -77,7 +77,7 @@ Router.post('/membership_register', async (req:Express.Request, res:Express.Resp
     try {
         console.dir(req.body);
         await askRegister(
-            req.body.userRequest.user.properties.botUserKey, req.body.action.params.image
+            req.body.userRequest.user.properties.botUserKey, req.body.action.params.image.secureUrls[0]
         );
         const okay = basicCard("", `신청이 완료되었습니다!
         심사가 완료되면 "마이페이지>My맴버십"에서 확인할 수 있어요.`, "");
