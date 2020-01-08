@@ -2,13 +2,13 @@ const Bundler = require('parcel-bundler');
 const Path = require('path');
 
 // 진입점 파일 위치
-const file = Path.join(__dirname, '../src/index.html');
+const file = Path.join(__dirname, './src/index.html');
 
 // 번들러 옵션
 const options = {
   outDir: './public', // 빌드 결과물이 저장될 디렉토리. 기본값은 dist
   outFile: 'index.html', // 결과물의 파일명
-  publicUrl: '/static', // 서버상의 위치. 기본값은 '/'
+  publicUrl: '/admin', // 서버상의 위치. 기본값은 '/'
   watch: true, // 파일 변경을 감지해서 변경시 다시 빌드할지 여부. 기본값은 process.env.NODE_ENV !== 'production'
   cache: true, // 캐시를 활성화할지 여부. 기본값은 true
   cacheDir: '.cache', // 캐시를 저장할 디렉토리. 기본값은 .cache

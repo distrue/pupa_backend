@@ -1,6 +1,10 @@
 import { UserModel } from '../models/user';
 import { MembershipModel } from '../models/membership';
 
+export async function listUser() {
+    return await UserModel.find({});
+}
+
 export async function findUser(plusfriendUserKey: string) {
     return await UserModel.findOne({"plusfriendUserKey": plusfriendUserKey});
 }

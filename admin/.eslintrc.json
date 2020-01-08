@@ -1,8 +1,10 @@
 {
-    "extends": ["react-app", "prettier", "airbnb"],
-    "plugins": ["prettier", "react"],
+    "extends": ["react-app", "airbnb"],
+    "plugins": ["react"],
     "rules": {
-      "prettier/prettier": ["warn"],
+      "indent": ["error", 2],
+      "linebreak-style": "off",
+      "semi": ["error", "always"],
       "react/jsx-filename-extension": 0,
       "react/jsx-curly-brace-presence": "off",
       "max-len": ["error", { "code": 160, "tabWidth": 2 }],
